@@ -14,10 +14,14 @@ export class HomeComponent implements OnInit {
   // idProduto: number    = 123;
   // precoProduto: number = 2.59;
   // promocao: boolean    = true;
+  //Relacionado a interpolation
   nomeProduto: string  = `Curso de Angular`; 
   anuncio: string      = `O ${this.nomeProduto} está em promoção`;
   idProduto:number     = 123;
-  precoProduto: number = 2.59; 
+  precoProduto: number = 2.59;
+  //---Relacionado a properly 
+  promocao: boolean    = false;
+  foto: string         = 'assets/img/crud.png';//é necessario o caminho em maos 
   constructor() {
 
     
