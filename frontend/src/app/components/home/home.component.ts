@@ -15,16 +15,16 @@ export class HomeComponent implements OnInit {
   // precoProduto: number = 2.59;
   // promocao: boolean    = true;
   //Relacionado a interpolation
-  nomeProduto: string  = `Curso de Angular`; 
+  nomeProduto: string  = `Curso de Angular`;
   anuncio: string      = `O ${this.nomeProduto} está em promoção`;
   idProduto:number     = 123;
   precoProduto: number = 2.59;
-  //---Relacionado a properly 
+  //---Relacionado a properly
   promocao: boolean    = false;
-  foto: string         = 'assets/img/crud.png';//é necessario o caminho em maos 
+  foto: string         = 'assets/img/crud.png';//é necessario o caminho em maos
   constructor() {
 
-    
+
 
     //this.anuncio = 'O' + this.anuncio + 'está em promoção!';
     // console.log(`Nome do produto: ${this.nomeProduto}`);
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     //   var b = 1
     //   console.log(a + ' a dentro if')
     //   console.log(b + ' b dentro if')
-    // } 
+    // }
     // console.log(a + ' a fora if')
     // console.log(b + ' b fora if')
     //var variavel1;
