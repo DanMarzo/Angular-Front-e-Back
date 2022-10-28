@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarProdutosComponent implements OnInit {
 
-  constructor() { }
+  listaString: string[] = ['Primeiro', 'Segundo', 'Terceiro'];
+
+ constructor () {
+    for (let item of this.listaString) {
+      console.log(item);
+    }
+  }
 
   ngOnInit(): void {
   }
