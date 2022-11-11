@@ -16,4 +16,11 @@ export class CadastrarProdutosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  salvarProduto(): void{
+    console.log('Nome: ', this.nome)
+    console.log('Validade: ', this.validade)
+    console.log('Preço: ', this.preco)
+    alert('Salvo com sucesso!')
+  }
+
 }
