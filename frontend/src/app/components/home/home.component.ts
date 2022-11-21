@@ -1,5 +1,6 @@
 import { AppModule } from './../../app.module';
 import { Component, OnInit } from '@angular/core';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   //---Relacionado a properly
   promocao: boolean    = true;
   foto: string         = 'assets/img/crud.png';//é necessario o caminho em maos
+  dataValidade: string   = "12/12/12";
   constructor() {
 
 
