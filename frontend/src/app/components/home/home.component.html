@@ -2,3 +2,25 @@
 <h4 class="text-danger">{{ anuncio }}</h4>
 <!-- Primeira variavel para interpolação -->
 
+<div class="row">
+  <div class="col">
+    <app-card-produto
+      [foto] =        "foto"
+      [nomeProduto] = "nomeProduto"
+      [promocao] =    "promocao"
+      [idProduto] =   "idProduto"
+      [dataValidade] = "dataValidade"
+      [precoProduto] = "precoProduto"></app-card-produto>
+  </div>
+  <div class="col">
+    <app-card-produto
+    foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5rwdOh0FqErS2iFhwgY200DEVgB_VDXnTEg&usqp=CAU"
+    nomeProduto = "Fate"
+    [promocao] =    "promocao"
+    [idProduto] =   "idProduto"
+    [dataValidade] = "dataValidade"
+    [precoProduto] = "precoProduto"></app-card-produto>
+  </div>
+</div>
+
+
