@@ -1,4 +1,4 @@
-import { Iproduto } from './../../../Model/IProduto.model';
+import { IProduto } from './../../../Model/IProduto.model';
 import { ProdutosService } from './../../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -20,7 +20,7 @@ export class ListarProdutosComponent implements OnInit {
     graduado: true
   };
 
-  listaProduto: Iproduto[] = [];
+  listaProduto: IProduto[] = [];
 
  constructor (private ProdutosService: ProdutosService) {
     for (let item of this.listaString) {
