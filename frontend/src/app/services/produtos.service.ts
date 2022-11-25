@@ -1,3 +1,4 @@
+import { Iproduto } from './../Model/IProduto.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,8 +11,8 @@ export class ProdutosService {
 
   constructor(private http: HttpClient) { }
 
-  buscarTodos(): Observable<any>{
-    return this.http.get(this.URL);
+  buscarTodos(): Observable<Iproduto[]>{
+    return this.http.get<Iproduto[]>(this.URL);
   }
 
 }
