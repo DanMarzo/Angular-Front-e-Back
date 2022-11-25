@@ -1,3 +1,5 @@
+import { Iproduto } from './../../../Model/IProduto.model';
+import { ProdutosService } from './../../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarProdutosComponent implements OnInit {
 
+  //
   listaString: string[] = ['Primeiro', 'Segundo', 'Terceiro'];
   listaNumero: number[] = [15, 15.28, 100]
 
@@ -17,13 +20,9 @@ export class ListarProdutosComponent implements OnInit {
     graduado: true
   };
 
-  listaProduto: any[] = [
-    {nome: 'Curso de Angular', precoProduto: 35.56, validade: '2021-12-31', id: 1},
-    {nome: 'Curso de Ionic', precoProduto: 50, validade: '2021-12-31', id: 2, promocao: true},
-    {id: 3, nome: 'Curso de Ionic Avançado', precoProduto: 50, validade: '2021-12-31'}
-  ];
+  listaProduto: Iproduto[] = [];
 
- constructor () {
+ constructor (private ProdutosService: ProdutosService) {
     for (let item of this.listaString) {
       console.log(item);
     }
@@ -38,5 +37,9 @@ export class ListarProdutosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  carregarProdutos(): void{
+    this.ProdutosService.buscarTodos().subscribe(retorno => {
+      this.listaProduto = retorno;
+    })
+  }
 }
