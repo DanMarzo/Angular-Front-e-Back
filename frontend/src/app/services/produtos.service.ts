@@ -1,7 +1,7 @@
 import { IProduto } from './../Model/IProduto.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EMPTY, EmptyError, map, Observable } from 'rxjs';
+import { EMPTY, EmptyError, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { map,catchError } from 'rxjs/operators';
 
