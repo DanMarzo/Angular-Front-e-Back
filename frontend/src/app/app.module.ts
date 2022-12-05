@@ -9,12 +9,12 @@ import { HomeComponent } from './components/home/home.component';
 import { ListarProdutosComponent } from './components/produtos/listar-produtos/listar-produtos.component';
 import { CadastrarProdutosComponent } from './components/produtos/cadastrar-produtos/cadastrar-produtos.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import "@angular/common/http";
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
+import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     HomeComponent,
     ListarProdutosComponent,
-    CadastrarProdutosComponent
+    CadastrarProdutosComponent,
+    AtualizarProdutoComponent
   ],
   imports: [
     BrowserModule,
