@@ -10,7 +10,7 @@
                     class="form-control"
                     placeholder="Digite o nome do Produto"
                     name="nome"
-                    [(ngModel)]="nome">
+                    [(ngModel)]="produto.nome">
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     type="date"
                     class="form-control"
                     name="validade"
-                    [(ngModel)]="validade">
+                    [(ngModel)]="produto.validade">
                 </div>
             </div>
             <div class="col-md-6">
@@ -34,7 +34,7 @@
                     class="form-control"
                     placeholder="0.00"
                     name="preco"
-                    [(ngModel)]="preco">
+                    [(ngModel)]="produto.validade">
                 </div>
             </div>
         </div>
@@ -49,10 +49,10 @@
                 </button>
             </div>
         </div>
-         <div class="card mt-3">
+         <!-- <div class="card mt-3">
           <p>Nome: {{ nome }}</p>
           <p>Validade: {{ validade }}</p>
           <p>Preço: {{ preco }}</p>
-         </div>
+         </div> -->
     </form>
 </div>
