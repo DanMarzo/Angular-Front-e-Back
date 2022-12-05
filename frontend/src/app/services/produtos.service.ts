@@ -16,6 +16,23 @@ export class ProdutosService {
   buscarTodos(): Observable<IProduto[]>{
     return this.http.get<IProduto[]>(this.URL).pipe(map(retorno => retorno), catchError(erro => this.exibirErro(erro)));
   }
+  cadastrar(produto: IProduto):Observable<IProduto>
+  {
+    return this.http.post<IProduto>(this.URL, produto).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+  }
+
+  atualizar(produto: IProduto):Observable<IProduto>
+  {
+    return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+  }
+
+
   exibirErro(e: any):Observable<any>{
     this.exibirMensagem("Erro!!", "Não foi possivel realizar a operação", "toast-error");
     return EMPTY;
@@ -23,5 +40,20 @@ export class ProdutosService {
 
   exibirMensagem(titulo: string, mensagem: string, tipo: string):void {
     this.toastr.show(mensagem, titulo, {closeButton:true, progressBar:true}, tipo);
+  }
+
+  buscarDados(): Observable<IProduto[]>
+  {
+    return this.http.get<IProduto[]>(this.URL).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+  }
+  buscarPorId(id: number): Observable<IProduto>
+  {
+    return this.http.get<IProduto>(`{this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
   }
 }
