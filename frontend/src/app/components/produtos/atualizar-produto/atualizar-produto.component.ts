@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProduto } from 'src/app/Model/IProduto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 
@@ -16,17 +16,25 @@ export class AtualizarProdutoComponent implements OnInit {
     precoProduto: 0
   };
 
-  constructor(private produtoService : ProdutosService, private router: Router) { }
+  constructor(
+    private produtoService : ProdutosService,
+    private router: Router,
+    private activateRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = Number(this.activateRouter.snapshot.paramMap.get('id'));
+    this.produtoService.buscarPorId(id).subscribe(
+      retorno => {
+        this.produto = retorno;
+      });
   }
 
   salvarProduto(): void{
-    this.produtoService.cadastrar(this.produto).subscribe(retorno => {
-      this.produto = retorno;
-      this.produtoService.exibirMensagem('Sistema', `${this.produto.nome} foi cadastrado com sucesso. ID: ${this.produto.id}`,'toast-success');
+    this.produtoService.atualizar(this.produto).subscribe(retorno => {
+    this.produto = retorno;
+    this.produtoService.exibirMensagem('Sistema', `${this.produto.nome} foi atualizado com sucesso. ID: ${this.produto.id}`,'toast-success');
 
-      this.router.navigate(['/produtos']);
+    this.router.navigate(['/produtos']);
 
     });
   }

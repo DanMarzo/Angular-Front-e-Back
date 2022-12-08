@@ -23,7 +23,6 @@ export class ProdutosService {
       catchError(erro => this.exibirErro(erro))
     );
   }
-
   atualizar(produto: IProduto):Observable<IProduto>
   {
     return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
@@ -31,17 +30,13 @@ export class ProdutosService {
       catchError(erro => this.exibirErro(erro))
     );
   }
-
-
   exibirErro(e: any):Observable<any>{
     this.exibirMensagem("Erro!!", "Não foi possivel realizar a operação", "toast-error");
     return EMPTY;
   }
-
   exibirMensagem(titulo: string, mensagem: string, tipo: string):void {
     this.toastr.show(mensagem, titulo, {closeButton:true, progressBar:true}, tipo);
   }
-
   buscarDados(): Observable<IProduto[]>
   {
     return this.http.get<IProduto[]>(this.URL).pipe(
