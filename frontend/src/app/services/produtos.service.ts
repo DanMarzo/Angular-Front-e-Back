@@ -30,6 +30,13 @@ export class ProdutosService {
       catchError(erro => this.exibirErro(erro))
     );
   }
+  excluir(id: Number):Observable<any>
+  {
+    return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+  }
   exibirErro(e: any):Observable<any>{
     this.exibirMensagem("Erro!!", "Não foi possivel realizar a operação", "toast-error");
     return EMPTY;

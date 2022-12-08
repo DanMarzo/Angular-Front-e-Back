@@ -1,9 +1,10 @@
+import { CadastrarProdutosComponent } from './components/produtos/cadastrar-produtos/cadastrar-produtos.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
-import { CadastrarProdutosComponent } from './components/produtos/cadastrar-produtos/cadastrar-produtos.component';
+
 import { ListarProdutosComponent } from './components/produtos/listar-produtos/listar-produtos.component';
 
 const routes: Routes = [
